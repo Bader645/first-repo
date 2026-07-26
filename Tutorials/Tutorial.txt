@@ -1,4 +1,4 @@
-IMPORTANT NOTE!:
+IMPORTANT NOTE:
 
 if your passkey is in a directory different than the default, ALWAYS use:
 git -c core.sshCommand="ssh -i <sshKeyDirectory>"
@@ -36,3 +36,9 @@ you're succesfully authenticated
 
 git -c core.sshCommand="ssh -i D:/Training-Folder/SSH-Keys/id_rsa" push -u origin main
 this one is to push from a key that isnt in the default folder
+
+Step 1: Update the existing origin to your SSH link:
+git remote set-url origin git@github.com:Bader645/First-Repo.git
+Step 2: Pull down the remote changes:
+git -c core.sshCommand="ssh -i D:/Training-Folder/SSH-Keys/id_rsa" pull origin main --allow-unrelated-histories
+Step 3: git push -u origin main
