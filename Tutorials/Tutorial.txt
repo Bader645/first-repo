@@ -1,4 +1,4 @@
-IMPORTANT NOTE:
+IMPORTANT NOTE!:
 
 if your passkey is in a directory different than the default, ALWAYS use:
 git -c core.sshCommand="ssh -i <sshKeyDirectory>"
