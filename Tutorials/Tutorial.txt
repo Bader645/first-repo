@@ -1,7 +1,7 @@
 IMPORTANT NOTE!!:
 
 if your passkey is in a directory different than the default, ALWAYS use:
-git -c code.sshCommand="ssh -i <sshKeyDirectory>"
+git -c core.sshCommand="ssh -i <sshKeyDirectory>"
 
 Order:
 working directory --> staging area --> local repo --> remote repo
