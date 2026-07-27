@@ -46,3 +46,11 @@ Step 3: git push -u origin main
 git config --global --edit: open the global configuration editor
 under [alias] you can edit shortcuts for commands, prefereably the shortcut should be 2 letter (ex. status = st)
 or you can go: git config --global alias.st status (this gives the alias "st" to the following command, which in here is status)
+
+git branch: view branches
+git branch <branch-name>: make a new branch
+git checkout/switch <branch-name>: switch to that branch
+(there was a difference between the two, search it up. tho switch is the safer option as i remember)
+git branch -d/D <branch-name>: delete mentioned branch (-d is the safe deleted, doesn't allow it if we have un-merged work. -D is forced)
+git checkout -b <branch-name>: creats branch and moves to it immediately
+git branch pm <new-branch-name>: rename branch
