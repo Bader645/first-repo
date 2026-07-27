@@ -75,3 +75,6 @@ git tag: shows what tags you've got
 git tag <tag-name>: creats tag
 git push origin main <tag-name>
 git tag -a <tag-name> -m "<message/tag-description>"
+git tag -l "<tag-name>": search
+git tag -d <tag-name>: local delete
+git push origin main --delete <tag-name>: remote delete
