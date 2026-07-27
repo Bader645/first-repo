@@ -58,4 +58,11 @@ git branch pm <new-branch-name>: rename branch
 stashing:
 after adding the new files you created/edited/... you perform "git stash" (they disappear from git st)
 git stash list: shows you if you're stashing in the current branch
-git stash pop: popos the stashed files out and puts them back (you can see them with git st now)
+git stash pop: pops the stashed files out and to the staging area (you can see them with git st now)
+git stash apply: takes a copy and puts it in the staging area
+git stash save "Message": puts that message in the stash list
+git stash pop/apply stash@{num}: takes out that specific stashed group
+git stash drop: completely deletes the groups with the files within
+git stash show: shows you what files you're stashing
+git stash clear: clears out all stashed groups and deletes them
+git stash branch <new_branch_name> <stash_id>: o create a new branch out of a stashed group
