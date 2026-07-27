@@ -54,3 +54,8 @@ git checkout/switch <branch-name>: switch to that branch
 git branch -d/D <branch-name>: delete mentioned branch (-d is the safe deleted, doesn't allow it if we have un-merged work. -D is forced)
 git checkout -b <branch-name>: creats branch and moves to it immediately
 git branch pm <new-branch-name>: rename branch
+
+stashing:
+after adding the new files you created/edited/... you perform "git stash" (they disappear from git st)
+git stash list: shows you if you're stashing in the current branch
+git stash pop: popos the stashed files out and puts them back (you can see them with git st now)
