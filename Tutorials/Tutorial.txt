@@ -70,3 +70,8 @@ git stash branch <new_branch_name> <stash_id>: o create a new branch out of a st
 Deleting commits:
 git log: views the commit log (pointers involved T_T)
 git reset --hard <commit-hash>
+
+git tag: shows what tags you've got
+git tag <tag-name>: creats tag
+git push origin main <tag-name>
+git tag -a <tag-name> -m "<message/tag-description>"
