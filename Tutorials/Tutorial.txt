@@ -1,0 +1,80 @@
+IMPORTANT NOTE:
+
+if your passkey is in a directory different than the default, ALWAYS use:
+git -c core.sshCommand="ssh -i <sshKeyDirectory>"
+
+Order:
+working directory --> staging area --> local repo --> remote repo
+
+commands:
+
+git status to view what you have committed and what not, in short views what's happening.
+
+from working directory to staging area: git add
+
+from staging area to local repo: git commit
+
+from local repo to working directory: git checkout / git merge (idk the difference tho)
+
+from local repo to remote repo: git push
+
+from remote repo to local repo: git fetch
+
+generating a keypass (GitHu Public Key):
+
+ssh-keygen -t rsa -b 4096 -C "example@gmail.com"
+you can change the directory of where the ssh key sits (like D:\Training-Folder\.ssh\id_rsa)
+Then Enter The passphrase
+use: type <FileDirectory> to see what's inside (type is the linux counterpart for cat)
+copy the content of the file (id_rsa.pub file) and insert it in your Github account.
+authenticate in Git command with: ssh -T git@github.com
+if you have the key in a directory different than the default, use:
+ssh -i <FileDirectory> -T git@github.com
+this one forces it to open the key without changing anything
+enter your passphrase
+you're succesfully authenticated
+
+git -c core.sshCommand="ssh -i D:/Training-Folder/SSH-Keys/id_rsa" push -u origin main
+this one is to push from a key that isnt in the default folder
+
+Step 1: Update the existing origin to your SSH link:
+git remote set-url origin git@github.com:Bader645/First-Repo.git
+Step 2: Pull down the remote changes:
+git -c core.sshCommand="ssh -i D:/Training-Folder/SSH-Keys/id_rsa" pull origin main --allow-unrelated-histories
+Step 3: git push -u origin main
+
+git config --global --edit: open the global configuration editor
+under [alias] you can edit shortcuts for commands, prefereably the shortcut should be 2 letter (ex. status = st)
+or you can go: git config --global alias.st status (this gives the alias "st" to the following command, which in here is status)
+
+git branch: view branches
+git branch <branch-name>: make a new branch
+git checkout/switch <branch-name>: switch to that branch
+(there was a difference between the two, search it up. tho switch is the safer option as i remember)
+git branch -d/D <branch-name>: delete mentioned branch (-d is the safe deleted, doesn't allow it if we have un-merged work. -D is forced)
+git checkout -b <branch-name>: creats branch and moves to it immediately
+git branch pm <new-branch-name>: rename branch
+
+stashing:
+after adding the new files you created/edited/... you perform "git stash" (they disappear from git st)
+git stash list: shows you if you're stashing in the current branch
+git stash pop: pops the stashed files out and to the staging area (you can see them with git st now)
+git stash apply: takes a copy and puts it in the staging area
+git stash save "Message": puts that message in the stash list
+git stash pop/apply stash@{num}: takes out that specific stashed group
+git stash drop: completely deletes the groups with the files within
+git stash show: shows you what files you're stashing
+git stash clear: clears out all stashed groups and deletes them
+git stash branch <new_branch_name> <stash_id>: o create a new branch out of a stashed group
+
+Deleting commits:
+git log: views the commit log (pointers involved T_T)
+git reset --hard <commit-hash>
+
+git tag: shows what tags you've got
+git tag <tag-name>: creats tag
+git push origin main <tag-name>
+git tag -a <tag-name> -m "<message/tag-description>"
+git tag -l "<tag-name>": search
+git tag -d <tag-name>: local delete
+git push origin main --delete <tag-name>: remote delete
