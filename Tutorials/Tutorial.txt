@@ -44,6 +44,8 @@ git -c core.sshCommand="ssh -i D:/Training-Folder/SSH-Keys/id_rsa" pull origin m
 Step 3: git push -u origin main
 
 in case of the key not working:
+git config core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" //main source of relief, ig
+
 sc config ssh-agent start= auto
 net start ssh-agent
 ssh-add "%USERPROFILE%\.ssh\id_ed25519"

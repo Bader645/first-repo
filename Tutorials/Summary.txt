@@ -1,0 +1,11 @@
+git config core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes"
+
+git remote set-url origin git@github.com:Bader645/First-Repo.git // DON'T FORGET TO PUT THE CORRECT REPO URL!!!!
+
+git pull origin main --allow-unrelated-histories // incase you can't put
+
+
+in case the key stopped working you can try:
+sc config ssh-agent start= auto
+net start ssh-agent
+ssh-add "%USERPROFILE%\.ssh\id_ed25519"
