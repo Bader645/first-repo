@@ -78,6 +78,7 @@ git stash branch <new_branch_name> <stash_id>: to create a new branch out of a s
 Deleting commits:
 git log: views the commit log (pointers involved T_T)
 git reset --hard <commit-hash>
+force push to delete the github commits from the terminal
 
 git tag: shows what tags you've got
 git tag <tag-name>: creats tag
